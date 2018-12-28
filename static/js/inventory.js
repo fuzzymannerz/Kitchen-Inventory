@@ -1,9 +1,14 @@
+
+function fillFormError(){
+  M.toast({html: "<strong>Please fill in all the form fields!</strong>", classes: 'red'});
+}
+
 // Add new item form submission
 $(function() {
     $('#addNewItem').click(function() {
 
         if ($.trim($("#barcode").val()) === "" || $.trim($("#item_name").val()) === "" || $.trim($("#amount").val()) === "") {
-          alert('Please fill in all the fields.');
+         fillFormError();
           return false;
         }
 
@@ -13,6 +18,30 @@ $(function() {
             type: 'POST',
             success: function(response) {
                 $("body").load("/");
+            },
+            error: function(error) {
+                $("body").load("/error/" + error);
+            }
+        });
+    });
+
+// Save Settings form submission
+    $("#settingsNotice").hide();
+
+    $('#saveSettings').click(function() {
+
+        if ($.trim($("#siteTitle").val()) === "") {
+          fillFormError();
+          return false;
+        }
+
+        $.ajax({
+            url: '/settings/save',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+               M.toast({html: "<strong>Settings saved successfully!<br>Reloading page...</strong>", classes: 'green'})
+               setTimeout(function(){window.location.reload()},4000);
             },
             error: function(error) {
                 $("body").load("/error/" + error);

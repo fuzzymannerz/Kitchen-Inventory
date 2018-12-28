@@ -9,7 +9,7 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-version = "0.1.0"
+version = "0.1"
 
 # Setup protection
 app.config['BASIC_AUTH_USERNAME'] = config['basicAuth']['username']
@@ -37,7 +37,7 @@ def main(editMode = False):
 		cur.execute('SELECT * FROM items')
 		results = cur.fetchall()
 
-		return render_template('index.html', items=results, editMode=editMode, version=version)
+		return render_template('index.html', items=results, editMode=editMode, version=version, config=config['siteSettings'])
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
@@ -137,7 +137,7 @@ def add(id = None):
 		return render_template('add.html')
 
 # Add to the DB
-@app.route('/additem',methods=['POST'])
+@app.route('/additem', methods=['POST'])
 def addItem():
 	try:
 		_barcode = request.form['barcode']
@@ -185,7 +185,6 @@ def remove(id):
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
 
-
 # Check amount of items in the inventory DB
 def checkAmount(id):
 	try:
@@ -225,6 +224,38 @@ def sendToOpenFoods(bc):
 			return (data['product']['product_name'] + " (" + data['product']['quantity'].replace(" ", "") + ")")
 		else:
 			return "Unknown Product"
+
+	except Exception as e:
+		return redirect('/error/{}'.format(e))
+
+
+# Settings Page
+@app.route('/settings')
+@basic_auth.required
+def settings():
+	return render_template('settings.html', version=version, config=config['siteSettings'], saved="false")
+
+@app.route('/settings/save', methods=['POST'])
+#@basic_auth.required
+def saveSettings():
+	try:
+		_siteTitle = request.form['siteTitle']
+
+		if _siteTitle:
+
+			try:
+				# Update the config file
+				cfg = open("config.ini", 'w')
+				config.set('siteSettings', 'siteTitle', _siteTitle)
+				config.write(cfg)
+				cfg.close()
+				return "ok"
+
+			except Exception as e:
+				return redirect('/error/{}'.format(e))
+
+		else:
+			raise RuntimeError("There was an error with the form")
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
