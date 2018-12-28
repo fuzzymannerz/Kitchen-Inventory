@@ -36,6 +36,12 @@ basic_auth = BasicAuth(app)
 ```  
 as well as all instances of `@basic_auth.required` in the same file.
 
+---
+
+## Contributions
+If you feel you have something to add or make better or whatever feel free to contribute to the project by forking and submitting pull requests. There is also the [development branch](https://github.com/fuzzymannerz/Kitchen-Inventory/tree/development) which contains the latest ideas being worked on.  
+Don't use it though in production as it's most likely broken. ;)
+
 ## Credits
 This project utilises the following projects and technologies:
 - flask - http://flask.pocoo.org/
