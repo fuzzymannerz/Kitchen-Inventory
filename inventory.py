@@ -2,24 +2,27 @@ from flask import Flask, render_template, redirect, request, url_for
 from flaskext.mysql import MySQL
 from flask_basicauth import BasicAuth
 import requests
+import configparser
 
+# Configuration
 app = Flask(__name__)
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+version = "0.1.0"
 
 # Setup protection
-app.config['BASIC_AUTH_USERNAME'] = 'YOUR_USERNAME_HERE'
-app.config['BASIC_AUTH_PASSWORD'] = 'YOUR_PASSWORD_HERE'
-app.config['BASIC_AUTH_FORCE'] = True
-
+app.config['BASIC_AUTH_USERNAME'] = config['basicAuth']['username']
+app.config['BASIC_AUTH_PASSWORD'] = config['basicAuth']['password']
+app.config['BASIC_AUTH_FORCE'] = config['basicAuth']['forceAuth']
 basic_auth = BasicAuth(app)
-
-# MySQL Settings
-mysql = MySQL(app)
  
-# MySQL configuration
-app.config['MYSQL_DATABASE_USER'] = 'inventory'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'SUPER_AWESOME_DB_PASSWORD_HERE'
-app.config['MYSQL_DATABASE_DB'] = 'inventory'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+# Set the MySQL configuration
+app.config['MYSQL_DATABASE_USER'] = config['mySQL']['username']
+app.config['MYSQL_DATABASE_PASSWORD'] = config['mySQL']['password']
+app.config['MYSQL_DATABASE_DB'] = config['mySQL']['database']
+app.config['MYSQL_DATABASE_HOST'] = config['mySQL']['host']
+mysql = MySQL(app)
 mysql.init_app(app)
 
 
@@ -34,7 +37,7 @@ def main(editMode = False):
 		cur.execute('SELECT * FROM items')
 		results = cur.fetchall()
 
-		return render_template('index.html', items=results, editMode=editMode)
+		return render_template('index.html', items=results, editMode=editMode, version=version)
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
@@ -73,7 +76,7 @@ def nostock(editMode = False):
 # Error Page
 @app.route('/error/<string:e>')
 def error(e):
-	return render_template('error.html', error=e)
+	return render_template('error.html', error=e, version=version)
 
 # Edit name page
 @app.route('/editname/<int:id>/<string:name>/<int:type>')
@@ -227,6 +230,7 @@ def sendToOpenFoods(bc):
 		return redirect('/error/{}'.format(e))
 
 
-# Run the app
-#if __name__ == "__main__":
-#	app.run(host='127.0.0.1', debug=True)
+# Check if test mode
+if config['testMode']['active'] == "True":
+	if __name__ == "__main__":
+		app.run(host=config['testMode']['host'])
