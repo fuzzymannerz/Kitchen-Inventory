@@ -1,6 +1,6 @@
 # Kitchen Inventory
 
-**A stock system for food and such. Currently a work in progress.**
+**A stock system for food and such. Currently a work in progress.**  
 Originally made for personal use so don't expect anything too special.
 
 _(The personal version also contained code for using a USB barcode scanner but it is removed in this repo version.)_
