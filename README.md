@@ -27,8 +27,7 @@ For example: `gunicorn -b 0.0.0.0:5000 inventory:app --daemon`.
 
 ## Removing Basic Auth Login
 If you don't wish to have an auth login for the site you can remove it as follows:  
-1. Set `forceAuth = False` under the `basicAuth` section of `config.ini`.  
-2. Remove or comment out the following lines in `inventory.py`:  
+1. Remove or comment out the following lines in `inventory.py`:  
 ```
 app.config['BASIC_AUTH_USERNAME'] = config['basicAuth']['username']
 app.config['BASIC_AUTH_PASSWORD'] = config['basicAuth']['password']
