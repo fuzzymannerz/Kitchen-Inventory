@@ -5,7 +5,7 @@ Originally made for personal use so don't expect anything too special.
 
 _(The personal version also contained code for using a USB barcode scanner but it is removed in this repo version.)_
 
-![](image)
+![](https://i.imgur.com/4YBlx2e.png)
 
 ## Requirements
 - MySQL / MariaDB
