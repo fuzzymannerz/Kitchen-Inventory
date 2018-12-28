@@ -1,14 +1,9 @@
 from flask import Flask, render_template, redirect, request, url_for
 from flaskext.mysql import MySQL
 from flask_basicauth import BasicAuth
-import multitasking
 import requests
-import time
 
 app = Flask(__name__)
-
-# TO START:
-# gunicorn -b 0.0.0.0:5000 inventory:app --daemon
 
 # Setup protection
 app.config['BASIC_AUTH_USERNAME'] = 'YOUR_USERNAME_HERE'
@@ -182,10 +177,6 @@ def remove(id):
 		cur.execute('UPDATE `items` SET `amount`=`amount`-1 WHERE `id`= {}'.format(id))
 		conn.commit()
 
-		# If amount is 0, delete the item from the DB
-		#if (checkAmount(id) == 0):
-		#	deleteItem(id)
-
 		return redirect('/edit/true')
 
 	except Exception as e:
@@ -238,4 +229,4 @@ def sendToOpenFoods(bc):
 
 # Run the app
 #if __name__ == "__main__":
-#	app.run(host='0.0.0.0', debug=True)
+#	app.run(host='127.0.0.1', debug=True)
