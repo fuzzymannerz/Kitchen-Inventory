@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+a{
+  color: #613c25;
+}
+
+h1 a{
+  color: black;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+th.tableHeader:hover{
+	cursor: pointer;
+}
+#remove, #remove a{
+	color: white;
+	background-color: #ef9a9a;
+}
+#remove:hover, #remove a:hover{
+	background-color: #e53935;
+}
+
+#add, #add a{
+	color: white;
+	background-color: #81c784;
+}
+#add:hover, #add a:hover{
+	background-color: #4caf50;
+}
+
+#disabledEdit, #disabledEdit:hover{
+	color: white;
+	background-color: #bdbdbd;
+	cursor: not-allowed;
+}
+#editName a{
+	color: #039BE5;
+}
+#editName a:hover{
+	color: black;
+}
+.consoleText{
+  color: #f5f5f5;
+  background-color: #212121;
+  font-size: 16px;
+  padding: 2%;
+  text-align: left;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+.errortext{
+  color: black;
+}
+td{
+	font-size: 18px;
+}
+footer{
+  text-align: center;
+  padding: 20px;
+  color: #b0bec5;
+}
+footer img{
+  margin-top: 20px;
+}

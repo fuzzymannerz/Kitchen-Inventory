@@ -1,0 +1,1364 @@
+@font-face {
+  font-family: 'pe-icon-set-food';
+  src: url("../fonts/pe-icon-set-food.eot?4p3rw6");
+  src: url("../fonts/pe-icon-set-food.eot?4p3rw6#iefix") format("embedded-opentype"), url("../fonts/pe-icon-set-food.ttf?4p3rw6") format("truetype"), url("../fonts/pe-icon-set-food.woff?4p3rw6") format("woff"), url("../fonts/pe-icon-set-food.svg?4p3rw6#pe-icon-set-food") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="pe-is-f-"], [class*=" pe-is-f-"] {
+  display: inline-block;
+  font-family: 'pe-icon-set-food';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pe-is-f-anana-f:before {
+  content: "\e900";
+}
+
+.pe-is-f-anana:before {
+  content: "\e901";
+}
+
+.pe-is-f-apple-1-f:before {
+  content: "\e902";
+}
+
+.pe-is-f-apple-1:before {
+  content: "\e903";
+}
+
+.pe-is-f-apple-2-f:before {
+  content: "\e904";
+}
+
+.pe-is-f-apple-2:before {
+  content: "\e905";
+}
+
+.pe-is-f-balance-f:before {
+  content: "\e906";
+}
+
+.pe-is-f-balance:before {
+  content: "\e907";
+}
+
+.pe-is-f-banana-f:before {
+  content: "\e908";
+}
+
+.pe-is-f-banana:before {
+  content: "\e909";
+}
+
+.pe-is-f-barbecue-1-f:before {
+  content: "\e90a";
+}
+
+.pe-is-f-barbecue-1:before {
+  content: "\e90b";
+}
+
+.pe-is-f-barbecue-2-f:before {
+  content: "\e90c";
+}
+
+.pe-is-f-barbecue-2:before {
+  content: "\e90d";
+}
+
+.pe-is-f-beater-1-f:before {
+  content: "\e90e";
+}
+
+.pe-is-f-beater-1:before {
+  content: "\e90f";
+}
+
+.pe-is-f-beater-2-f:before {
+  content: "\e910";
+}
+
+.pe-is-f-beater-2:before {
+  content: "\e911";
+}
+
+.pe-is-f-beer-bottle-f:before {
+  content: "\e912";
+}
+
+.pe-is-f-beer-bottle:before {
+  content: "\e913";
+}
+
+.pe-is-f-beer-glass-f:before {
+  content: "\e914";
+}
+
+.pe-is-f-beer-glass:before {
+  content: "\e915";
+}
+
+.pe-is-f-birthday-cake-1-f:before {
+  content: "\e916";
+}
+
+.pe-is-f-birthday-cake-1:before {
+  content: "\e917";
+}
+
+.pe-is-f-birthday-cake-2-f:before {
+  content: "\e918";
+}
+
+.pe-is-f-birthday-cake-2:before {
+  content: "\e919";
+}
+
+.pe-is-f-blender-f:before {
+  content: "\e91a";
+}
+
+.pe-is-f-blender:before {
+  content: "\e91b";
+}
+
+.pe-is-f-bottle-f:before {
+  content: "\e91c";
+}
+
+.pe-is-f-bottle:before {
+  content: "\e91d";
+}
+
+.pe-is-f-bread-1-f:before {
+  content: "\e91e";
+}
+
+.pe-is-f-bread-1:before {
+  content: "\e91f";
+}
+
+.pe-is-f-bread-2-f:before {
+  content: "\e920";
+}
+
+.pe-is-f-bread-2:before {
+  content: "\e921";
+}
+
+.pe-is-f-bread-3-f:before {
+  content: "\e922";
+}
+
+.pe-is-f-bread-3:before {
+  content: "\e923";
+}
+
+.pe-is-f-broccoli-f:before {
+  content: "\e924";
+}
+
+.pe-is-f-broccoli:before {
+  content: "\e925";
+}
+
+.pe-is-f-burger-1-f:before {
+  content: "\e926";
+}
+
+.pe-is-f-burger-1:before {
+  content: "\e927";
+}
+
+.pe-is-f-burger-2-f:before {
+  content: "\e928";
+}
+
+.pe-is-f-burger-2:before {
+  content: "\e929";
+}
+
+.pe-is-f-can-1-f:before {
+  content: "\e92a";
+}
+
+.pe-is-f-can-1:before {
+  content: "\e92b";
+}
+
+.pe-is-f-can-2-f:before {
+  content: "\e92c";
+}
+
+.pe-is-f-can-2:before {
+  content: "\e92d";
+}
+
+.pe-is-f-can-3-f:before {
+  content: "\e92e";
+}
+
+.pe-is-f-can-3:before {
+  content: "\e92f";
+}
+
+.pe-is-f-candy-f:before {
+  content: "\e930";
+}
+
+.pe-is-f-candy:before {
+  content: "\e931";
+}
+
+.pe-is-f-carrot-f:before {
+  content: "\e932";
+}
+
+.pe-is-f-carrot:before {
+  content: "\e933";
+}
+
+.pe-is-f-cereals-f:before {
+  content: "\e934";
+}
+
+.pe-is-f-cereals:before {
+  content: "\e935";
+}
+
+.pe-is-f-champagne-glass-1-f:before {
+  content: "\e936";
+}
+
+.pe-is-f-champagne-glass-1:before {
+  content: "\e937";
+}
+
+.pe-is-f-champagne-glass-2-f:before {
+  content: "\e938";
+}
+
+.pe-is-f-champagne-glass-2:before {
+  content: "\e939";
+}
+
+.pe-is-f-cheese-1-f:before {
+  content: "\e93a";
+}
+
+.pe-is-f-cheese-1:before {
+  content: "\e93b";
+}
+
+.pe-is-f-cheese-2:before {
+  content: "\e93c";
+}
+
+.pe-is-f-chef-hat-f:before {
+  content: "\e93d";
+}
+
+.pe-is-f-chef-hat:before {
+  content: "\e93e";
+}
+
+.pe-is-f-cherries-f:before {
+  content: "\e93f";
+}
+
+.pe-is-f-cherries:before {
+  content: "\e940";
+}
+
+.pe-is-f-chicken-1-f:before {
+  content: "\e941";
+}
+
+.pe-is-f-chicken-1:before {
+  content: "\e942";
+}
+
+.pe-is-f-chicken-2-f:before {
+  content: "\e943";
+}
+
+.pe-is-f-chicken-2:before {
+  content: "\e944";
+}
+
+.pe-is-f-chicken-3-f:before {
+  content: "\e945";
+}
+
+.pe-is-f-chicken-3:before {
+  content: "\e946";
+}
+
+.pe-is-f-chili-pepper-f:before {
+  content: "\e947";
+}
+
+.pe-is-f-chili-pepper:before {
+  content: "\e948";
+}
+
+.pe-is-f-chinese-food-52-f:before {
+  content: "\e949";
+}
+
+.pe-is-f-chinese-food-53-f:before {
+  content: "\e94a";
+}
+
+.pe-is-f-chinese-food-53:before {
+  content: "\e94b";
+}
+
+.pe-is-f-chinese-food-54:before {
+  content: "\e94c";
+}
+
+.pe-is-f-chocolate-f:before {
+  content: "\e94d";
+}
+
+.pe-is-f-chocolate:before {
+  content: "\e94e";
+}
+
+.pe-is-f-chopp-f:before {
+  content: "\e94f";
+}
+
+.pe-is-f-chopp:before {
+  content: "\e950";
+}
+
+.pe-is-f-chopping-board-f:before {
+  content: "\e951";
+}
+
+.pe-is-f-chopping-board:before {
+  content: "\e952";
+}
+
+.pe-is-f-cloche-f:before {
+  content: "\e953";
+}
+
+.pe-is-f-cloche-hand-f:before {
+  content: "\e954";
+}
+
+.pe-is-f-cloche-hand:before {
+  content: "\e955";
+}
+
+.pe-is-f-cloche:before {
+  content: "\e956";
+}
+
+.pe-is-f-cocktail-glass-1-f:before {
+  content: "\e957";
+}
+
+.pe-is-f-cocktail-glass-1:before {
+  content: "\e958";
+}
+
+.pe-is-f-cocktail-glass-2-f:before {
+  content: "\e959";
+}
+
+.pe-is-f-cocktail-glass-2:before {
+  content: "\e95a";
+}
+
+.pe-is-f-cocktail-glass-3-f:before {
+  content: "\e95b";
+}
+
+.pe-is-f-cocktail-glass-3:before {
+  content: "\e95c";
+}
+
+.pe-is-f-cocktail-glass-4-f:before {
+  content: "\e95d";
+}
+
+.pe-is-f-cocktail-glass-4:before {
+  content: "\e95e";
+}
+
+.pe-is-f-coffee-bean-f:before {
+  content: "\e95f";
+}
+
+.pe-is-f-coffee-bean:before {
+  content: "\e960";
+}
+
+.pe-is-f-coffee-beans-f:before {
+  content: "\e961";
+}
+
+.pe-is-f-coffee-beans:before {
+  content: "\e962";
+}
+
+.pe-is-f-coffee-maker-1-f:before {
+  content: "\e963";
+}
+
+.pe-is-f-coffee-maker-1:before {
+  content: "\e964";
+}
+
+.pe-is-f-coffee-maker-2-f:before {
+  content: "\e965";
+}
+
+.pe-is-f-coffee-maker-2:before {
+  content: "\e966";
+}
+
+.pe-is-f-coffee-maker-3-f:before {
+  content: "\e967";
+}
+
+.pe-is-f-coffee-maker-3:before {
+  content: "\e968";
+}
+
+.pe-is-f-colander-f:before {
+  content: "\e969";
+}
+
+.pe-is-f-colander:before {
+  content: "\e96a";
+}
+
+.pe-is-f-cork-skrew-f:before {
+  content: "\e96b";
+}
+
+.pe-is-f-cork-skrew:before {
+  content: "\e96c";
+}
+
+.pe-is-f-corn-f:before {
+  content: "\e96d";
+}
+
+.pe-is-f-corn:before {
+  content: "\e96e";
+}
+
+.pe-is-f-croissant-f:before {
+  content: "\e96f";
+}
+
+.pe-is-f-croissant:before {
+  content: "\e970";
+}
+
+.pe-is-f-cup-1-f:before {
+  content: "\e971";
+}
+
+.pe-is-f-cup-1:before {
+  content: "\e972";
+}
+
+.pe-is-f-cup-2-f:before {
+  content: "\e973";
+}
+
+.pe-is-f-cup-2:before {
+  content: "\e974";
+}
+
+.pe-is-f-cup-coffee-f:before {
+  content: "\e975";
+}
+
+.pe-is-f-cup-coffee-hot-1-f:before {
+  content: "\e976";
+}
+
+.pe-is-f-cup-coffee-hot-1:before {
+  content: "\e977";
+}
+
+.pe-is-f-cup-coffee-hot-2-f:before {
+  content: "\e978";
+}
+
+.pe-is-f-cup-coffee-hot-2:before {
+  content: "\e979";
+}
+
+.pe-is-f-cup-coffee:before {
+  content: "\e97a";
+}
+
+.pe-is-f-cup-tea-f:before {
+  content: "\e97b";
+}
+
+.pe-is-f-cup-tea:before {
+  content: "\e97c";
+}
+
+.pe-is-f-cupcake-f:before {
+  content: "\e97d";
+}
+
+.pe-is-f-cupcake:before {
+  content: "\e97e";
+}
+
+.pe-is-f-donut-1-f:before {
+  content: "\e97f";
+}
+
+.pe-is-f-donut-1:before {
+  content: "\e980";
+}
+
+.pe-is-f-donut-2-f:before {
+  content: "\e981";
+}
+
+.pe-is-f-donut-2:before {
+  content: "\e982";
+}
+
+.pe-is-f-egg-1-f:before {
+  content: "\e983";
+}
+
+.pe-is-f-egg-1:before {
+  content: "\e984";
+}
+
+.pe-is-f-egg-2-f:before {
+  content: "\e985";
+}
+
+.pe-is-f-egg-2:before {
+  content: "\e986";
+}
+
+.pe-is-f-egg-3-f:before {
+  content: "\e987";
+}
+
+.pe-is-f-egg-3:before {
+  content: "\e988";
+}
+
+.pe-is-f-eggplant-f:before {
+  content: "\e989";
+}
+
+.pe-is-f-eggplant:before {
+  content: "\e98a";
+}
+
+.pe-is-f-fish-1-f:before {
+  content: "\e98b";
+}
+
+.pe-is-f-fish-1:before {
+  content: "\e98c";
+}
+
+.pe-is-f-fish-2-f:before {
+  content: "\e98d";
+}
+
+.pe-is-f-fish-2:before {
+  content: "\e98e";
+}
+
+.pe-is-f-flatware-1:before {
+  content: "\e98f";
+}
+
+.pe-is-f-flatware-2:before {
+  content: "\e990";
+}
+
+.pe-is-f-flatware-3:before {
+  content: "\e991";
+}
+
+.pe-is-f-flatware-4-f:before {
+  content: "\e992";
+}
+
+.pe-is-f-flatware-4:before {
+  content: "\e993";
+}
+
+.pe-is-f-french-fries-f:before {
+  content: "\e994";
+}
+
+.pe-is-f-french-fries:before {
+  content: "\e995";
+}
+
+.pe-is-f-grapes-f:before {
+  content: "\e996";
+}
+
+.pe-is-f-grapes:before {
+  content: "\e997";
+}
+
+.pe-is-f-grater-f:before {
+  content: "\e998";
+}
+
+.pe-is-f-grater:before {
+  content: "\e999";
+}
+
+.pe-is-f-highball-glass-1-f:before {
+  content: "\e99a";
+}
+
+.pe-is-f-highball-glass-1:before {
+  content: "\e99b";
+}
+
+.pe-is-f-highball-glass-2-f:before {
+  content: "\e99c";
+}
+
+.pe-is-f-highball-glass-2:before {
+  content: "\e99d";
+}
+
+.pe-is-f-highball-glass-3-f:before {
+  content: "\e99e";
+}
+
+.pe-is-f-highball-glass-3:before {
+  content: "\e99f";
+}
+
+.pe-is-f-highball-glass-4-f:before {
+  content: "\e9a0";
+}
+
+.pe-is-f-highball-glass-4:before {
+  content: "\e9a1";
+}
+
+.pe-is-f-hot-dog-f:before {
+  content: "\e9a2";
+}
+
+.pe-is-f-hot-dog:before {
+  content: "\e9a3";
+}
+
+.pe-is-f-ice-cream-1-f:before {
+  content: "\e9a4";
+}
+
+.pe-is-f-ice-cream-1:before {
+  content: "\e9a5";
+}
+
+.pe-is-f-ice-cream-2-f:before {
+  content: "\e9a6";
+}
+
+.pe-is-f-ice-cream-2:before {
+  content: "\e9a7";
+}
+
+.pe-is-f-ice-cream-3-f:before {
+  content: "\e9a8";
+}
+
+.pe-is-f-ice-cream-3:before {
+  content: "\e9a9";
+}
+
+.pe-is-f-ice-cream-4-f:before {
+  content: "\e9aa";
+}
+
+.pe-is-f-ice-cream-4:before {
+  content: "\e9ab";
+}
+
+.pe-is-f-ice-cream-stick-f:before {
+  content: "\e9ac";
+}
+
+.pe-is-f-ice-cream-stick:before {
+  content: "\e9ad";
+}
+
+.pe-is-f-juice-f:before {
+  content: "\e9ae";
+}
+
+.pe-is-f-juice:before {
+  content: "\e9af";
+}
+
+.pe-is-f-kebab-f:before {
+  content: "\e9b0";
+}
+
+.pe-is-f-kebab:before {
+  content: "\e9b1";
+}
+
+.pe-is-f-kettle-1-f:before {
+  content: "\e9b2";
+}
+
+.pe-is-f-kettle-1:before {
+  content: "\e9b3";
+}
+
+.pe-is-f-kettle-2-f:before {
+  content: "\e9b4";
+}
+
+.pe-is-f-kettle-2:before {
+  content: "\e9b5";
+}
+
+.pe-is-f-kettle-3-f:before {
+  content: "\e9b6";
+}
+
+.pe-is-f-kettle-3:before {
+  content: "\e9b7";
+}
+
+.pe-is-f-ladle-f:before {
+  content: "\e9b8";
+}
+
+.pe-is-f-ladle:before {
+  content: "\e9b9";
+}
+
+.pe-is-f-lemon-1-f:before {
+  content: "\e9ba";
+}
+
+.pe-is-f-lemon-1:before {
+  content: "\e9bb";
+}
+
+.pe-is-f-lemon-2-f:before {
+  content: "\e9bc";
+}
+
+.pe-is-f-lemon-2:before {
+  content: "\e9bd";
+}
+
+.pe-is-f-liquor-bottle-1-f:before {
+  content: "\e9be";
+}
+
+.pe-is-f-liquor-bottle-1:before {
+  content: "\e9bf";
+}
+
+.pe-is-f-liquor-bottle-2-f:before {
+  content: "\e9c0";
+}
+
+.pe-is-f-liquor-bottle-2:before {
+  content: "\e9c1";
+}
+
+.pe-is-f-liquor-bottle-3-f:before {
+  content: "\e9c2";
+}
+
+.pe-is-f-liquor-bottle-3:before {
+  content: "\e9c3";
+}
+
+.pe-is-f-lollipop-1-f:before {
+  content: "\e9c4";
+}
+
+.pe-is-f-lollipop-1:before {
+  content: "\e9c5";
+}
+
+.pe-is-f-lollipop-2-f:before {
+  content: "\e9c6";
+}
+
+.pe-is-f-lollipop-2:before {
+  content: "\e9c7";
+}
+
+.pe-is-f-measuring-cup-f:before {
+  content: "\e9c8";
+}
+
+.pe-is-f-measuring-cup:before {
+  content: "\e9c9";
+}
+
+.pe-is-f-meat-f:before {
+  content: "\e9ca";
+}
+
+.pe-is-f-meat-tenderizer-f:before {
+  content: "\e9cb";
+}
+
+.pe-is-f-meat-tenderizer:before {
+  content: "\e9cc";
+}
+
+.pe-is-f-meat:before {
+  content: "\e9cd";
+}
+
+.pe-is-f-microwave-f:before {
+  content: "\e9ce";
+}
+
+.pe-is-f-microwave:before {
+  content: "\e9cf";
+}
+
+.pe-is-f-milk-1-f:before {
+  content: "\e9d0";
+}
+
+.pe-is-f-milk-1:before {
+  content: "\e9d1";
+}
+
+.pe-is-f-milk-2-f:before {
+  content: "\e9d2";
+}
+
+.pe-is-f-milk-2:before {
+  content: "\e9d3";
+}
+
+.pe-is-f-moka-f:before {
+  content: "\e9d4";
+}
+
+.pe-is-f-moka:before {
+  content: "\e9d5";
+}
+
+.pe-is-f-mushroom-1-f:before {
+  content: "\e9d6";
+}
+
+.pe-is-f-mushroom-1:before {
+  content: "\e9d7";
+}
+
+.pe-is-f-mushroom-2-f:before {
+  content: "\e9d8";
+}
+
+.pe-is-f-mushroom-2:before {
+  content: "\e9d9";
+}
+
+.pe-is-f-onion-f:before {
+  content: "\e9da";
+}
+
+.pe-is-f-onion:before {
+  content: "\e9db";
+}
+
+.pe-is-f-orange-1-f:before {
+  content: "\e9dc";
+}
+
+.pe-is-f-orange-1:before {
+  content: "\e9dd";
+}
+
+.pe-is-f-orange-2-f:before {
+  content: "\e9de";
+}
+
+.pe-is-f-orange-2:before {
+  content: "\e9df";
+}
+
+.pe-is-f-oven-1-f:before {
+  content: "\e9e0";
+}
+
+.pe-is-f-oven-1:before {
+  content: "\e9e1";
+}
+
+.pe-is-f-oven-2-f:before {
+  content: "\e9e2";
+}
+
+.pe-is-f-oven-2:before {
+  content: "\e9e3";
+}
+
+.pe-is-f-oven-glove-f:before {
+  content: "\e9e4";
+}
+
+.pe-is-f-oven-glove:before {
+  content: "\e9e5";
+}
+
+.pe-is-f-pan-f:before {
+  content: "\e9e6";
+}
+
+.pe-is-f-pan:before {
+  content: "\e9e7";
+}
+
+.pe-is-f-pear-f:before {
+  content: "\e9e8";
+}
+
+.pe-is-f-pear:before {
+  content: "\e9e9";
+}
+
+.pe-is-f-pepper-f:before {
+  content: "\e9ea";
+}
+
+.pe-is-f-pepper-shaker-f:before {
+  content: "\e9eb";
+}
+
+.pe-is-f-pepper-shaker:before {
+  content: "\e9ec";
+}
+
+.pe-is-f-pepper:before {
+  content: "\e9ed";
+}
+
+.pe-is-f-piece-of-cake-1-f:before {
+  content: "\e9ee";
+}
+
+.pe-is-f-piece-of-cake-1:before {
+  content: "\e9ef";
+}
+
+.pe-is-f-piece-of-cake-2-f:before {
+  content: "\e9f0";
+}
+
+.pe-is-f-piece-of-cake-2:before {
+  content: "\e9f1";
+}
+
+.pe-is-f-pitcher-1-f:before {
+  content: "\e9f2";
+}
+
+.pe-is-f-pitcher-1:before {
+  content: "\e9f3";
+}
+
+.pe-is-f-pitcher-2-f:before {
+  content: "\e9f4";
+}
+
+.pe-is-f-pitcher-2:before {
+  content: "\e9f5";
+}
+
+.pe-is-f-pizza-1-f:before {
+  content: "\e9f6";
+}
+
+.pe-is-f-pizza-1:before {
+  content: "\e9f7";
+}
+
+.pe-is-f-pizza-2-f:before {
+  content: "\e9f8";
+}
+
+.pe-is-f-pizza-2:before {
+  content: "\e9f9";
+}
+
+.pe-is-f-plate-f:before {
+  content: "\e9fa";
+}
+
+.pe-is-f-plate:before {
+  content: "\e9fb";
+}
+
+.pe-is-f-pot-1-f:before {
+  content: "\e9fc";
+}
+
+.pe-is-f-pot-1:before {
+  content: "\e9fd";
+}
+
+.pe-is-f-pot-2-f:before {
+  content: "\e9fe";
+}
+
+.pe-is-f-pot-2:before {
+  content: "\e9ff";
+}
+
+.pe-is-f-potato-f:before {
+  content: "\ea00";
+}
+
+.pe-is-f-potato:before {
+  content: "\ea01";
+}
+
+.pe-is-f-pumpkin-f:before {
+  content: "\ea02";
+}
+
+.pe-is-f-pumpkin:before {
+  content: "\ea03";
+}
+
+.pe-is-f-refrigerator-f:before {
+  content: "\ea04";
+}
+
+.pe-is-f-refrigerator:before {
+  content: "\ea05";
+}
+
+.pe-is-f-rolling-pin-f:before {
+  content: "\ea06";
+}
+
+.pe-is-f-rolling-pin:before {
+  content: "\ea07";
+}
+
+.pe-is-f-salame-f:before {
+  content: "\ea08";
+}
+
+.pe-is-f-salame:before {
+  content: "\ea09";
+}
+
+.pe-is-f-salt-shaker-f:before {
+  content: "\ea0a";
+}
+
+.pe-is-f-salt-shaker:before {
+  content: "\ea0b";
+}
+
+.pe-is-f-sandwich-f:before {
+  content: "\ea0c";
+}
+
+.pe-is-f-sandwich:before {
+  content: "\ea0d";
+}
+
+.pe-is-f-sauce-1-f:before {
+  content: "\ea0e";
+}
+
+.pe-is-f-sauce-1:before {
+  content: "\ea0f";
+}
+
+.pe-is-f-sauce-2-f:before {
+  content: "\ea10";
+}
+
+.pe-is-f-sauce-2:before {
+  content: "\ea11";
+}
+
+.pe-is-f-sausage-1-f:before {
+  content: "\ea12";
+}
+
+.pe-is-f-sausage-1:before {
+  content: "\ea13";
+}
+
+.pe-is-f-sausage-2-f:before {
+  content: "\ea14";
+}
+
+.pe-is-f-sausage-2:before {
+  content: "\ea15";
+}
+
+.pe-is-f-skewer-f:before {
+  content: "\ea16";
+}
+
+.pe-is-f-skewer:before {
+  content: "\ea17";
+}
+
+.pe-is-f-soda-bottle-f:before {
+  content: "\ea18";
+}
+
+.pe-is-f-soda-bottle:before {
+  content: "\ea19";
+}
+
+.pe-is-f-spatula-1-f:before {
+  content: "\ea1a";
+}
+
+.pe-is-f-spatula-1:before {
+  content: "\ea1b";
+}
+
+.pe-is-f-spatula-2-f:before {
+  content: "\ea1c";
+}
+
+.pe-is-f-spatula-2:before {
+  content: "\ea1d";
+}
+
+.pe-is-f-spatula-3-f:before {
+  content: "\ea1e";
+}
+
+.pe-is-f-spatula-3:before {
+  content: "\ea1f";
+}
+
+.pe-is-f-steak-1-f:before {
+  content: "\ea20";
+}
+
+.pe-is-f-steak-1:before {
+  content: "\ea21";
+}
+
+.pe-is-f-steak-2-f:before {
+  content: "\ea22";
+}
+
+.pe-is-f-steak-2:before {
+  content: "\ea23";
+}
+
+.pe-is-f-strawberry-f:before {
+  content: "\ea24";
+}
+
+.pe-is-f-strawberry:before {
+  content: "\ea25";
+}
+
+.pe-is-f-sushi-1-f:before {
+  content: "\ea26";
+}
+
+.pe-is-f-sushi-1:before {
+  content: "\ea27";
+}
+
+.pe-is-f-sushi-2-f:before {
+  content: "\ea28";
+}
+
+.pe-is-f-sushi-2:before {
+  content: "\ea29";
+}
+
+.pe-is-f-sushi-3-f:before {
+  content: "\ea2a";
+}
+
+.pe-is-f-sushi-3:before {
+  content: "\ea2b";
+}
+
+.pe-is-f-sushi-4-f:before {
+  content: "\ea2c";
+}
+
+.pe-is-f-sushi-4:before {
+  content: "\ea2d";
+}
+
+.pe-is-f-thermal-cup-1-f:before {
+  content: "\ea2e";
+}
+
+.pe-is-f-thermal-cup-1:before {
+  content: "\ea2f";
+}
+
+.pe-is-f-thermal-cup-2-f:before {
+  content: "\ea30";
+}
+
+.pe-is-f-thermal-cup-2:before {
+  content: "\ea31";
+}
+
+.pe-is-f-thermal-cup-3-f:before {
+  content: "\ea32";
+}
+
+.pe-is-f-thermal-cup-3:before {
+  content: "\ea33";
+}
+
+.pe-is-f-tomato-f:before {
+  content: "\ea34";
+}
+
+.pe-is-f-tomato:before {
+  content: "\ea35";
+}
+
+.pe-is-f-waffle-f:before {
+  content: "\ea36";
+}
+
+.pe-is-f-waffle:before {
+  content: "\ea37";
+}
+
+.pe-is-f-water-glass-f:before {
+  content: "\ea38";
+}
+
+.pe-is-f-water-glass:before {
+  content: "\ea39";
+}
+
+.pe-is-f-watermelon-f:before {
+  content: "\ea3a";
+}
+
+.pe-is-f-watermelon:before {
+  content: "\ea3b";
+}
+
+.pe-is-f-wheat-f:before {
+  content: "\ea3c";
+}
+
+.pe-is-f-wheat:before {
+  content: "\ea3d";
+}
+
+.pe-is-f-whisk-f:before {
+  content: "\ea3e";
+}
+
+.pe-is-f-whisk:before {
+  content: "\ea3f";
+}
+
+.pe-is-f-whisky-glass-1-f:before {
+  content: "\ea40";
+}
+
+.pe-is-f-whisky-glass-1:before {
+  content: "\ea41";
+}
+
+.pe-is-f-whisky-glass-2-f:before {
+  content: "\ea42";
+}
+
+.pe-is-f-whisky-glass-2:before {
+  content: "\ea43";
+}
+
+.pe-is-f-wine-bottle-1-f:before {
+  content: "\ea44";
+}
+
+.pe-is-f-wine-bottle-1:before {
+  content: "\ea45";
+}
+
+.pe-is-f-wine-bottle-2-f:before {
+  content: "\ea46";
+}
+
+.pe-is-f-wine-bottle-2:before {
+  content: "\ea47";
+}
+
+.pe-is-f-wine-glass-1-f:before {
+  content: "\ea48";
+}
+
+.pe-is-f-wine-glass-1:before {
+  content: "\ea49";
+}
+
+.pe-is-f-wine-glass-2-f:before {
+  content: "\ea4a";
+}
+
+.pe-is-f-wine-glass-2:before {
+  content: "\ea4b";
+}
+
+.pe-is-f-wine-glass-3-f:before {
+  content: "\ea4c";
+}
+
+.pe-is-f-wine-glass-3:before {
+  content: "\ea4d";
+}
+
+.pe-is-f-wine-glass-4-f:before {
+  content: "\ea4e";
+}
+
+.pe-is-f-wine-glass-4:before {
+  content: "\ea4f";
+}

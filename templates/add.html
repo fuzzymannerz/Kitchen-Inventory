@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>Add An Item</h1>
+			</div>
+		</div>
+
+		  <div class="row">
+		    <form class="col s12" id="addItemForm">
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="barcode" id="barcode" type="text">
+		          <label for="barcode">Barcode</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input id="item_name_new_name" name="item_name" type="text">
+		          <label for="item_name">Item Name</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s2">
+		          <input id="amount" name="amount" type="text">
+		          <label for="amount">Amount</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input id="type" name="type" type="text">
+		          <label for="type">Type (1: Fridge, 2: Freezer, 3: Cupboard, 4: Veg)</label>
+		        </div>
+		      </div>
+		      <button id="addNewItem" class="waves-effect waves-light btn green z-depth-2" type="button">Add Item</button>
+		      <a class="waves-effect waves-light btn red z-depth-2" href="/">Cancel</a>
+		    </form>
+		  </div>
+	</div>
+</div>
+
+{% include 'footer.html' %}

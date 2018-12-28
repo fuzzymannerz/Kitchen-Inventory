@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 center-align">
+				<i class="large material-icons">mood_bad</i>
+				<h1>Oh no!</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center-align">
+				<h4>The following error occured:</h4>
+				<p class="flow-text errortext">{{ error }}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center-align">
+				<a class="waves-effect waves-light btn red z-depth-2" href="/"><i class="material-icons left">add</i>Go Back</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include 'footer.html' %}

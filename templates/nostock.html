@@ -1,0 +1,103 @@
+{% include 'header.html' %}
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 pageheader">
+				<h1><a href="/nostock">No Stock Items</a></h1>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Add & remove buttons -->
+			<div class="col s12">
+				
+				<a class="waves-effect waves-light btn red z-depth-2" href="/"><i class="material-icons left">chevron_left</i>Go Back</a>
+				{% if editMode %}
+				<a class="waves-effect waves-light btn brown darken-1 z-depth-2" href="/nostock"><i class="material-icons left">check</i>Done</a>
+				{% else %}
+				<a class="waves-effect waves-light btn brown darken-1 z-depth-2" href="nostock/edit/true"><i class="material-icons left">edit</i>Edit</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<input type="text" id="tableSearchOldStock" onkeyup="tableSearch('tableSearchOldStock','oldInventoryTable')" placeholder="Search...">
+			<table class="striped z-depth-2 centered" id="oldInventoryTable">
+			        <thead>
+			          <tr>
+			              <th onclick="sortTable(0)" class="tableHeader">ITEM</th>
+			              <th class="noselect">TYPE</th>
+			          </tr>
+			        </thead>
+				    <tbody>
+			         	{% for item in items %}
+						{% if item[2] <= 0 %}
+	                	<tr>
+							{% if editMode %}
+							<td id="editName">
+								{{ item[3] }}
+			<a class="waves-effect waves-light btn-flat" href="/editname/{{ item[0] }}/{{ item[3] }}/{{ item[4] }}"><i class="material-icons">create</i></a>
+							</td>
+							{% else %}
+	                    	<td>{{ item[3] }} <a class="waves-effect waves-light btn-flat disabled" href="/editname/{{ item[0] }}/{{ item[3] }}"><i class="material-icons">create</i></a></td>
+							{% endif %}
+
+							{% if item[4] == 1 %}
+	                    	<td class="light-blue white-text"><i class="pe-is-f-refrigerator-f pe-3x"></i></td>
+	                    	{% elif item[4] == 2 %}
+	                    	<td class="light-blue lighten-3 white-text"><i class="medium material-icons">ac_unit</i></td>
+	                    	{% elif item[4] == 3 %}
+	                    	<td class="brown lighten-3 white-text"><i class="pe-is-f-wheat-f pe-3x"></i></td>
+	                    	{% elif item[4] == 4 %}
+	                    	<td class="green lighten-2 white-text"><i class="pe-is-f-carrot-f pe-3x"></i></td>
+	                    	{% else %}
+	                    	<td><i class="medium material-icons">help</i></td>
+	                    	{% endif %}
+							
+
+	                    	{% if editMode %}
+	                    	<td id="remove" class="tooltipped" data-position="left" data-tooltip="Completely remove this item.">
+	                    		<a href="/delete/{{ item[0] }}">
+		                    		<div style="height:100%;width:100%">
+		                    			<i class="material-icons">remove</i>
+		                    		</div>
+	                    		</a>
+	                    	</td>
+						
+	                    	<td id="add" class="tooltipped" data-position="right" data-tooltip="Set this item amount to 1">
+	                    		<a href="/add/{{ item[0] }}">
+		                    		<div style="height:100%;width:100%">
+		                    			<i class="material-icons">add</i>
+		                    		</div>
+	                    		</a>
+	                    	</td>
+
+
+	                    	{% else %}
+	                    	<td id="disabledEdit">
+		                    	<div>
+		                    		<i class="material-icons">remove</i>
+		                    	</div>
+	                    	</td>
+						
+	                    	<td id="disabledEdit">
+		                    	<div>
+		                    		<i class="material-icons">add</i>
+		                    	</div>
+	                    	</td>
+
+	                    	{% endif %}
+	                    </tr>
+						{% endif %}
+             			{% endfor %}
+			        </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% include 'footer.html' %}
