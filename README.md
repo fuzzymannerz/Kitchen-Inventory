@@ -28,6 +28,7 @@ app.config['BASIC_AUTH_USERNAME'] = 'YOUR_USERNAME_HERE'
 app.config['BASIC_AUTH_PASSWORD'] = 'YOUR_PASSWORD_HERE'
 ```
 (Otherwise delete or comment out those lines as well as `basic_auth = BasicAuth(app)` and all mentions of `@basic_auth.required` and remove `from flask_basicauth import BasicAuth` from the top.)
+
 5. You can test the app by uncommenting:
 ```
 #if __name__ == "__main__":
