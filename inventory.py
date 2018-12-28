@@ -9,6 +9,8 @@ app = Flask(__name__)
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+version = "0.1.0"
+
 # Setup protection
 app.config['BASIC_AUTH_USERNAME'] = config['basicAuth']['username']
 app.config['BASIC_AUTH_PASSWORD'] = config['basicAuth']['password']
@@ -35,7 +37,7 @@ def main(editMode = False):
 		cur.execute('SELECT * FROM items')
 		results = cur.fetchall()
 
-		return render_template('index.html', items=results, editMode=editMode)
+		return render_template('index.html', items=results, editMode=editMode, version=version)
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
@@ -74,7 +76,7 @@ def nostock(editMode = False):
 # Error Page
 @app.route('/error/<string:e>')
 def error(e):
-	return render_template('error.html', error=e)
+	return render_template('error.html', error=e, version=version)
 
 # Edit name page
 @app.route('/editname/<int:id>/<string:name>/<int:type>')
