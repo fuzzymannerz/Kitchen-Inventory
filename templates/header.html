@@ -3,9 +3,16 @@
 <head>
 	<meta charset="utf-8" />
 	<title>{{ config.siteTitle }}</title>
+
 	<meta name="viewport" content="initial-scale=1.0; width=device-width;">
     <link rel="stylesheet" type="text/css" href="/static/css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+	
+    {% if config.darkmode == "on" %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style_dark.css"/>
+	{% endif %}
+    
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link rel="stylesheet" href="/static/pe-icon-set-food/css/pe-icon-set-food.css">

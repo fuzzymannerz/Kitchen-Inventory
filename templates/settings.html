@@ -4,22 +4,41 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<h1>{{ config.siteTitle }} Settings</h1>
+				<h1>{{ config.sitetitle }} Settings</h1>
 			</div>
 		</div>
 
-		  <div class="row">
-		    <form class="col s12" id="settingsForm">
+		    <form id="settingsForm">
 		      <div class="row">
 		        <div class="input-field col s6">
 		          	<input id="siteTitle" name="siteTitle" type="text" value="{{ config.siteTitle }}">
 		          <label for="siteTitle">Site Title</label>
 		        </div>
-		      
-		      <button id="saveSettings" class="waves-effect waves-light btn green z-depth-2" type="button" href="/settings/save">Save Settings</button>
-		      <a class="waves-effect waves-light btn red z-depth-2" href="/" >Close Settings</a>
+
+		        <div class="input-field col s6">
+		          <p>
+		          	<label>
+		          		{% if config.darkmode == "on" %}
+		          		<input id="darkMode" class="filled-in" name="darkMode" type="checkbox" checked>
+		          		{% else %}
+		          		<input id="darkMode" class="filled-in" name="darkMode" type="checkbox">
+		          		{% endif %}
+		          		<span>Enable Dark Mode</span>
+		          	</label>
+		          </p>
+		        </div>
+
+		    </div>
+
+		    <div class="row">
+			     <div class="col s12">
+				     <button id="saveSettings" class="waves-effect waves-light btn green z-depth-2" type="button" href="/settings/save">Save Settings</button>
+				      <a class="waves-effect waves-light btn red z-depth-2" href="/" >Close Settings</a>
+			  	</div>
+			</div>
+
 		    </form>
-		  </div>
+
 	</div>
 </div>
 

@@ -1,0 +1,80 @@
+body {
+  background-color: #212121;
+}
+
+a{
+  color: white;
+}
+
+h1 {
+  color: #bdbdbd;
+}
+
+h1 a{
+  color: #bdbdbd;
+}
+
+input{
+  color: #bdbdbd;
+}
+
+.brown{
+  background-color: #303030 !important;
+}
+.green{
+  background-color: #1b5e20 !important;
+}
+.red{
+  background-color: #b71c1c !important;
+}
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid green;
+  background-color: green;
+}
+
+tr{
+    background-color: #bdbdbd;
+}
+td{
+    background-color: #757575;
+    color: white;
+}
+#editName a, #editName i{
+	color: #ffffff;
+}
+#editName a:hover, #editName i:hover{
+	color: #212121;
+}
+#remove, #remove a{
+	color: white;
+	background-color: #b71c1c;
+}
+#remove:hover, #remove a:hover{
+	background-color: #c62828;
+}
+
+#add, #add a{
+	color: white;
+	background-color: #1b5e20;
+}
+#add:hover, #add a:hover{
+	background-color: #2e7d32;
+}
+
+#disabledEdit, #disabledEdit:hover{
+	color: #bdbdbd;
+	background-color: #212121;
+}
+#editName a{
+	color: #039BE5;
+}
+#editName a:hover{
+	color: black;
+}
+.errortext{
+  color: #bdbdbd;
+}
+footer{
+  color: #424242;
+}
