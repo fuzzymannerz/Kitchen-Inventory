@@ -36,6 +36,11 @@ basic_auth = BasicAuth(app)
 ```  
 as well as all instances of `@basic_auth.required` in the same file.
 
+## Settings
+There is a settings page accessible from `/settings` or by clicking the settings menu link.  
+Here you can change the title of the site as well as activate and deactivate a dark mode.  
+_More options will be here as the project develops._
+
 ---
 
 ## Contributions
