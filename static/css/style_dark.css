@@ -28,6 +28,24 @@ input{
   background-color: #b71c1c !important;
 }
 
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid green;
+  background-color: green;
+}
+
+tr{
+    background-color: #bdbdbd;
+}
+td{
+    background-color: #757575;
+    color: white;
+}
+#editName a, #editName i{
+	color: #ffffff;
+}
+#editName a:hover, #editName i:hover{
+	color: #212121;
+}
 #remove, #remove a{
 	color: white;
 	background-color: #b71c1c;

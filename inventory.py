@@ -77,7 +77,7 @@ def nostock(editMode = False):
 # Error Page
 @app.route('/error/<string:e>')
 def error(e):
-	return render_template('error.html', error=e, version=version)
+	return render_template('error.html', error=e, version=version, config=config['siteSettings'])
 
 # Edit name page
 @app.route('/editname/<int:id>/<string:name>/<int:type>')
