@@ -3,6 +3,7 @@ from flaskext.mysql import MySQL
 from flask_basicauth import BasicAuth
 import requests
 import configparser
+import sys
 
 # Configuration
 app = Flask(__name__)
@@ -53,7 +54,7 @@ def viewall(typeCat, editMode=False):
 		cur.execute('SELECT * FROM items WHERE `type`="{}"'.format(typeCat))
 		results = cur.fetchall()
 
-		return render_template('viewall.html', items=results, editMode=editMode, type=typeCat)
+		return render_template('viewall.html', items=results, editMode=editMode, type=typeCat, config=config['siteSettings'])
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
@@ -68,7 +69,7 @@ def nostock(editMode = False):
 		cur.execute('SELECT * FROM items')
 		results = cur.fetchall()
 
-		return render_template('nostock.html', items=results, editMode=editMode)
+		return render_template('nostock.html', items=results, editMode=editMode, config=config['siteSettings'])
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))	
@@ -82,7 +83,7 @@ def error(e):
 @app.route('/editname/<int:id>/<string:name>/<int:type>')
 def editname(name, id, type):
 	try:
-		return render_template('editname.html', itemName=name, itemID=id, itemType=type)
+		return render_template('editname.html', itemName=name, itemID=id, itemType=type, config=config['siteSettings'])
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))	
@@ -134,7 +135,7 @@ def add(id = None):
 			return redirect('/error/{}'.format(e))
 
 	else:
-		return render_template('add.html')
+		return render_template('add.html', config=config['siteSettings'])
 
 # Add to the DB
 @app.route('/additem', methods=['POST'])
@@ -240,13 +241,20 @@ def settings():
 def saveSettings():
 	try:
 		_siteTitle = request.form['siteTitle']
+		_darkMode = request.form.get("darkMode")
 
 		if _siteTitle:
 
 			try:
 				# Update the config file
 				cfg = open("config.ini", 'w')
-				config.set('siteSettings', 'siteTitle', _siteTitle)
+				config.set('siteSettings', 'sitetitle', _siteTitle)
+
+				if _darkMode == None:
+					config.set('siteSettings', 'darkmode', 'off')
+				else:
+					config.set('siteSettings', 'darkmode', 'on')
+
 				config.write(cfg)
 				cfg.close()
 				return "ok"
