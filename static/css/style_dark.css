@@ -17,7 +17,12 @@ h1 a{
 input{
   color: #bdbdbd;
 }
-
+.filtersText{
+  color: #bdbdbd;
+}
+.tablePagination{
+  color: #bdbdbd;
+}
 .brown{
   background-color: #303030 !important;
 }

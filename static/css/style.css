@@ -15,6 +15,12 @@ h1 a{
 main {
   flex: 1 0 auto;
 }
+.tablePagination button{
+  padding: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -60,6 +66,24 @@ th.tableHeader:hover{
 }
 .errortext{
   color: black;
+}
+.tabs .tab a{
+  color: #4CAF50;
+} 
+.tabs .tab a:hover  {
+  background-color:#4CAF50;
+  color:white;
+  }
+.tabs .tab a.active {
+  background-color:#4CAF50;
+  color:white;
+}
+.tab a:focus, .tab a:focus.active {
+  background-color:#4CAF50;
+  color:black;
+}
+.tabs .indicator {
+  background-color:#4CAF50;
 }
 td{
 	font-size: 18px;

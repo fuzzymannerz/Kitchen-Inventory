@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+{% include 'inc/header.html' %}
 
 <div class="section" data-role="page" data-url="{{ url_for('main') }}" id="main">
 	<div class="container">
@@ -20,105 +20,50 @@
 				{% endif %}
 			</div>
 
-			<!-- View by category buttons -->
-			<div class="col s6 right-align">
-				Filters:
-        
-				<a class="waves-effect waves-light btn light-blue z-depth-2" href="/viewall/1"><i class="pe-is-f-refrigerator-f center"></i></a>
-				<a class="waves-effect waves-light btn light-blue lighten-3 z-depth-2" href="/viewall/2"><i class="material-icons center">ac_unit</i></a>
-				<a class="waves-effect waves-light btn brown lighten-3 z-depth-2" href="/viewall/3"><i class="pe-is-f-wheat-f center"></i></a>
-				<a class="waves-effect waves-light btn green lighten-2 z-depth-2" href="/viewall/4"><i class="pe-is-f-carrot-f center"></i></a>
-			</div>
 		</div>
 	</div>
 </div>
 
 <div class="container">
-	<div class="row">
-		<div class="col s12">
-			<input type="text" id="tableSearch" onkeyup="tableSearch('tableSearch','inventoryTable')" placeholder="Search...">
-			<table class="striped z-depth-2 centered" id="inventoryTable">
-			        <thead>
-			          <tr>
-			          	{% if editMode %}
-			              <th class="noselect"></th>
-			            {% endif %}
-			            
-			              <th onclick="sortTable(0)" class="tableHeader noselect">ITEM</th>
-			              <th class="noselect">AMOUNT</th>
-			              <th class="noselect">TYPE</th>
-			          </tr>
-			        </thead>
-				    <tbody>
-			         	{% for item in items %}
-						{% if item[2] >= 1 %}
-	                	<tr>
-							{% if editMode %}
-							<td id="deleteItem" class="tooltipped" data-position="left" data-tooltip="Delete this item permanently."><a href="/delete/{{ item[0] }}"><i class="small material-icons">delete_forever</i></a></td>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s2"><a href="#all">View All</a></li>
+					<li class="tab col s2"><a href="#fridge">Fridge</a></li>
+					<li class="tab col s2"><a href="#freezer">Freezer</a></li>
+					<li class="tab col s2"><a href="#cupboard">Cupboard</a></li>
+					<li class="tab col s2"><a href="#veg">Vegetables</a></li>
+					<li class="tab col s2"><a href="#fruit">Fruit</a></li>
+				</ul>
+			</div>
 
-							<td id="editName">
-								{{ item[3] }}
-			<a class="waves-effect waves-light btn-flat" href="/editname/{{ item[0] }}/{{ item[3] }}/{{ item[4] }}"><i class="material-icons">create</i></a>
-							</td>
-							{% else %}
-	                    	<td>{{ item[3] }} <a class="waves-effect waves-light btn-flat disabled" href="/editname/{{ item[0] }}/{{ item[3] }}"><i class="material-icons">create</i></a></td>
-							{% endif %}
-	                    	<td>{{ item[2] }}</td>
+			<!--<input type="text" id="tableSearch" onkeyup="tableSearch('tableSearch','table')" placeholder="Search..."> -->
 
-	                    	{% if item[4] == 1 %}
-	                    	<td class="light-blue white-text"><i class="pe-is-f-refrigerator-f pe-2x"></i></td>
-	                    	{% elif item[4] == 2 %}
-	                    	<td class="light-blue lighten-3 white-text"><i class="material-icons">ac_unit</i></td>
-	                    	{% elif item[4] == 3 %}
-	                    	<td class="brown lighten-3 white-text"><i class="pe-is-f-wheat-f pe-2x"></i></td>
-	                    	{% elif item[4] == 4 %}
-	                    	<td class="green lighten-2 white-text"><i class="pe-is-f-carrot-f pe-2x"></i></td>
-	                    	{% else %}
-	                    	<td><i class="medium material-icons">help</i></td>
-	                    	{% endif %}
+			<div id="all" class="col s12">
+				{% include '/inc/tables/all.html' %}
+			</div>
 
+			<div id="fridge" class="col s12">
+				{% include '/inc/tables/fridge.html' %}
+			</div>
 
+			<div id="freezer" class="col s12">
+				{% include '/inc/tables/freezer.html' %}
+			</div>
 
+			<div id="cupboard" class="col s12">
+				{% include '/inc/tables/cupboard.html' %}
+			</div>
 
-	                    	{% if editMode %}
-	                    	<td id="remove" class="tooltipped" data-position="left" data-tooltip="Remove 1 from item amount.">
-	                    		<a href="/remove/{{ item[0] }}">
-		                    		<div style="height:100%;width:100%">
-		                    			<i class="material-icons">remove</i>
-		                    		</div>
-	                    		</a>
-	                    	</td>
+			<div id="veg" class="col s12">
+				{% include '/inc/tables/veg.html' %}
+			</div>
 
-	                    	<td id="add" class="tooltipped" data-position="right" data-tooltip="Add 1 to item amount.">
-	                    		<a href="/add/{{ item[0] }}">
-		                    		<div style="height:100%;width:100%">
-		                    			<i class="material-icons">add</i>
-		                    		</div>
-	                    		</a>
-	                    	</td>
+			<div id="fruit" class="col s12">
+				{% include '/inc/tables/fruit.html' %}
+			</div>
 
-
-	                    	{% else %}
-	                    	<td id="disabledEdit">
-		                    	<div>
-		                    		<i class="material-icons">remove</i>
-		                    	</div>
-	                    	</td>
-
-	                    	<td id="disabledEdit">
-		                    	<div>
-		                    		<i class="material-icons">add</i>
-		                    	</div>
-	                    	</td>
-
-	                    	{% endif %}
-	                    </tr>
-						{% endif %}
-             			{% endfor %}
-			        </tbody>
-			</table>
 		</div>
-	</div>
 </div>
 
-{% include 'footer.html' %}
+{% include 'inc/footer.html' %}

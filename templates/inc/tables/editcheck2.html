@@ -1,0 +1,31 @@
+{% if editMode %}
+	                    	<td id="remove" class="tooltipped" data-position="left" data-tooltip="Remove 1 from item amount.">
+	                    		<a href="/remove/{{ item[1] }}">
+		                    		<div style="height:100%;width:100%">
+		                    			<i class="material-icons">remove</i>
+		                    		</div>
+	                    		</a>
+	                    	</td>
+
+	                    	<td id="add" class="tooltipped" data-position="right" data-tooltip="Add 1 to item amount.">
+	                    		<a href="/add/{{ item[1] }}">
+		                    		<div style="height:100%;width:100%">
+		                    			<i class="material-icons">add</i>
+		                    		</div>
+	                    		</a>
+	                    	</td>
+
+
+	                    	{% else %}
+	                    	<td id="disabledEdit">
+		                    	<div>
+		                    		<i class="material-icons">remove</i>
+		                    	</div>
+	                    	</td>
+
+	                    	<td id="disabledEdit">
+		                    	<div>
+		                    		<i class="material-icons">add</i>
+		                    	</div>
+	                    	</td>
+{% endif %}

@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+{% include 'inc/header.html' %}
 
 <div class="section">
 	<div class="container">
@@ -11,10 +11,16 @@
 		  <div class="row">
 		    <form class="col s12" id="addItemForm">
 		      <div class="row">
+
+				{% if config.enablebarcodes == "on" %}
 		        <div class="input-field col s4">
 		          <input name="barcode" id="barcode" type="text">
 		          <label for="barcode">Barcode</label>
 		        </div>
+				{% else %}
+		          <input name="barcode" id="barcode" type="text" hidden value="off">
+				{% endif %}
+
 		        <div class="input-field col s4">
 		          <input id="item_name" name="item_name" type="text">
 		          <label for="item_name">Item Name</label>
@@ -26,8 +32,17 @@
 		          <label for="amount">Amount</label>
 		        </div>
 		        <div class="input-field col s4">
-		          <input id="type" name="type" type="text">
-		          <label for="type">Type (1: Fridge, 2: Freezer, 3: Cupboard, 4: Veg)</label>
+
+					    <select id="type" name="type">
+							<option value="" disabled selected>...</option>
+							<option value="1">Fridge</option>
+							<option value="2">Freezer</option>
+							<option value="3">Cupboard</option>
+							<option value="4">Vegetable</option>
+							<option value="5">Fruit</option>
+						</select>
+						<label>Type of product</label>
+
 		        </div>
 		      </div>
 		      <button id="addNewItem" class="waves-effect waves-light btn green z-depth-2" type="button">Add Item</button>
@@ -37,4 +52,4 @@
 	</div>
 </div>
 
-{% include 'footer.html' %}
+{% include 'inc/footer.html' %}

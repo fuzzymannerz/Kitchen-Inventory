@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+{% include 'inc/header.html' %}
 
 <div class="section">
 	<div class="container">
@@ -14,8 +14,24 @@
 		          	<input id="siteTitle" name="siteTitle" type="text" value="{{ config.siteTitle }}">
 		          <label for="siteTitle">Site Title</label>
 		        </div>
+		    </div>
 
-		        <div class="input-field col s6">
+		    <div class="row">
+
+		        <div class="input-field col s2">
+		          <p>
+		          	<label>
+		          		{% if config.enablebarcodes == "on" %}
+		          		<input id="enableBarcodes" class="filled-in" name="enableBarcodes" type="checkbox" checked>
+		          		{% else %}
+		          		<input id="enableBarcodes" class="filled-in" name="enableBarcodes" type="checkbox">
+		          		{% endif %}
+		          		<span>Enable Barcodes</span>
+		          	</label>
+		          </p>
+		        </div>
+
+		    	<div class="input-field col s2">
 		          <p>
 		          	<label>
 		          		{% if config.darkmode == "on" %}
@@ -28,6 +44,7 @@
 		          </p>
 		        </div>
 
+		        
 		    </div>
 
 		    <div class="row">
@@ -42,4 +59,4 @@
 	</div>
 </div>
 
-{% include 'footer.html' %}
+{% include 'inc/footer.html' %}

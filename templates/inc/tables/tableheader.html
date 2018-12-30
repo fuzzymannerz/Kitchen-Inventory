@@ -1,0 +1,12 @@
+<table class="striped z-depth-1 centered" id="inventoryTable">
+			        <thead>
+			          <tr>
+			          	{% if editMode %}
+			              <th class="noselect"></th>
+			            {% endif %}
+			            
+			              <th onclick="sortTable(0)" class="tableHeader noselect">ITEM</th>
+			              <th class="noselect">AMOUNT</th>
+			              <th class="noselect">TYPE</th>
+			          </tr>
+			        </thead>
