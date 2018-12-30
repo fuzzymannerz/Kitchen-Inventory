@@ -1,0 +1,79 @@
+{% include 'inc/header.html' %}
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>Edit Item</h1>
+			</div>
+		</div>
+
+		  <div class="row">
+		    <form class="col s12" id="updateItemForm">
+		      <div class="row">
+		      	{% for item in item %}
+
+				{% if config.enablebarcodes == "on" %}
+		        <div class="input-field col s4">
+		          <input name="barcode" id="barcode" type="text" value="{{ item[1] }}">
+		          <label for="barcode">Barcode</label>
+		        </div>
+				{% else %}
+		          <input name="barcode" id="barcode" type="text" hidden value="{{ item[1] }}">
+				{% endif %}
+
+		        <div class="input-field col s4">
+		          <input id="item_name" name="item_name" type="text" value="{{ item[3] }}">
+		          <label for="item_name">Item Name</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s2">
+		          <input id="amount" name="amount" type="text" value="{{ item[2] }}">
+		          <label for="amount">Amount</label>
+		        </div>
+		        <div class="input-field col s4">
+
+					    <select id="type" name="type">
+					    	{% if item[4] == 1 %}
+							<option value="1" selected>Fridge</option>
+							{% else %}
+							<option value="1">Fridge</option>
+							{% endif %}
+
+							{% if item[4] == 2 %}
+							<option value="2" selected>Freezer</option>
+							{% else %}
+							<option value="2">Freezer</option>
+							{% endif %}
+
+							{% if item[4] == 3 %}
+							<option value="3" selected>Cupboard</option>
+							{% else %}
+							<option value="3">Cupboard</option>
+							{% endif %}
+
+							{% if item[4] == 4 %}
+							<option value="4" selected>Vegetable</option>
+							{% else %}
+							<option value="4">Vegetable</option>
+							{% endif %}
+							
+							{% if item[4] == 5 %}
+							<option value="5" selected>Fruit</option>
+							{% else %}
+							<option value="5">Fruit</option>
+							{% endif %}
+						</select>
+						<label>Type of product</label>
+				{% endfor %}
+		        </div>
+		      </div>
+		      <button id="updateItem" class="waves-effect waves-light btn green z-depth-2" type="button">Update Item</button>
+		      <a class="waves-effect waves-light btn red z-depth-2" href="/">Cancel</a>
+		    </form>
+		  </div>
+	</div>
+</div>
+
+{% include 'inc/footer.html' %}

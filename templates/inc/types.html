@@ -1,0 +1,13 @@
+{% if item[4] == 1 %}
+<td class="light-blue white-text"><i class="pe-is-f-refrigerator-f pe-2x"></i></td>
+{% elif item[4] == 2 %}
+<td class="light-blue lighten-3 white-text"><i class="medium material-icons">ac_unit</i></td>
+{% elif item[4] == 3 %}
+<td class="brown lighten-3 white-text"><i class="pe-is-f-wheat-f pe-2x"></i></td>
+{% elif item[4] == 4 %}
+<td class="orange lighten-1 white-text"><i class="pe-is-f-carrot-f pe-2x"></i></td>
+{% elif item[4] == 5 %}
+<td class="green lighten-2 white-text"><i class="pe-is-f-apple-1-f pe-2x"></i></td>
+{% else %}
+<td><i class="medium material-icons">help</i></td>
+{% endif %}

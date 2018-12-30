@@ -1,10 +1,10 @@
-{% include 'header.html' %}
+{% include 'inc/header.html' %}
 
 <div class="section" data-role="page" data-url="{{ url_for('main') }}" id="main">
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<h1><a href="/">Kitchen Inventory</a></h1>
+				<h1><a href="/">{{ config.siteTitle }}</a></h1>
 			</div>
 		</div>
 		<div class="row">
@@ -39,35 +39,22 @@
 						{% if item[2] >= 1 %}
 	                	<tr>
 							{% if editMode %}
-							<td id="deleteItem" class="tooltipped" data-position="left" data-tooltip="Delete this item permanently."><a href="/delete/{{ item[0] }}"><i class="small material-icons">delete_forever</i></a></td>
+							<td id="deleteItem" class="tooltipped" data-position="left" data-tooltip="Delete this item permanently."><a href="/delete/{{ item[1] }}"><i class="small material-icons">delete_forever</i></a></td>
 
 							<td id="editName">
 								{{ item[3] }}
-			<a class="waves-effect waves-light btn-flat" href="/editname/{{ item[0] }}/{{ item[3] }}/{{ item[4] }}"><i class="material-icons">create</i></a>
+			<a class="waves-effect waves-light btn-flat" href="/edititem/{{ item[1] }}"><i class="material-icons">create</i></a>
 							</td>
 							{% else %}
-	                    	<td>{{ item[3] }} <a class="waves-effect waves-light btn-flat disabled" href="/editname/{{ item[0] }}/{{ item[3] }}"><i class="material-icons">create</i></a></td>
+	                    	<td>{{ item[3] }} <a class="waves-effect waves-light btn-flat disabled" href="/edititem/{{ item[0] }}/{{ item[3] }}"><i class="material-icons">create</i></a></td>
 							{% endif %}
 	                    	<td>{{ item[2] }}</td>
 
-	                    	{% if item[4] == 1 %}
-	                    	<td class="light-blue white-text"><i class="pe-is-f-refrigerator-f pe-3x"></i></td>
-	                    	{% elif item[4] == 2 %}
-	                    	<td class="light-blue lighten-3 white-text"><i class="medium material-icons">ac_unit</i></td>
-	                    	{% elif item[4] == 3 %}
-	                    	<td class="brown lighten-3 white-text"><i class="pe-is-f-wheat-f pe-3x"></i></td>
-	                    	{% elif item[4] == 4 %}
-	                    	<td class="green lighten-2 white-text"><i class="pe-is-f-carrot-f pe-3x"></i></td>
-	                    	{% else %}
-	                    	<td><i class="medium material-icons">help</i></td>
-	                    	{% endif %}
-
-
-
+	                    	{% include 'inc/types.html' %}
 
 	                    	{% if editMode %}
 	                    	<td id="remove" class="tooltipped" data-position="left" data-tooltip="Remove 1 from item amount.">
-	                    		<a href="/remove/{{ item[0] }}">
+	                    		<a href="/remove/{{ item[1] }}">
 		                    		<div style="height:100%;width:100%">
 		                    			<i class="material-icons">remove</i>
 		                    		</div>
@@ -75,7 +62,7 @@
 	                    	</td>
 
 	                    	<td id="add" class="tooltipped" data-position="right" data-tooltip="Add 1 to item amount.">
-	                    		<a href="/add/{{ item[0] }}">
+	                    		<a href="/add/{{ item[1] }}">
 		                    		<div style="height:100%;width:100%">
 		                    			<i class="material-icons">add</i>
 		                    		</div>
@@ -106,4 +93,4 @@
 	</div>
 </div>
 
-{% include 'footer.html' %}
+{% include 'inc/footer.html' %}

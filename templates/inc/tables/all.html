@@ -1,0 +1,14 @@
+{% include 'inc/tables/tableheader.html' %}
+				    <tbody>
+			         	{% for item in items %}
+						{% if item[2] >= 1 %}
+	                	<tr>
+							{% include 'inc/tables/editcheck.html' %}
+	                    	{% include 'inc/tables/types.html' %}
+	                    	{% include 'inc/tables/editcheck2.html' %}
+	                    </tr>
+						{% endif %}
+             			{% endfor %}
+			        </tbody>
+			</table>
+{% include 'inc/tables/tablefooter.html' %}

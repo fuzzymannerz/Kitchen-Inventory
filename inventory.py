@@ -3,6 +3,7 @@ from flaskext.mysql import MySQL
 from flask_basicauth import BasicAuth
 import requests
 import configparser
+from random import randint
 import sys
 
 # Configuration
@@ -44,17 +45,15 @@ def main(editMode = False):
 		return redirect('/error/{}'.format(e))
 
 # View all from category page
-@app.route('/viewall/<int:typeCat>')
-@app.route('/viewall/<int:typeCat>/edit/<editMode>')
-@basic_auth.required
-def viewall(typeCat, editMode=False):
+@app.route('/table/<int:type>')
+def makeTable(type):
 	try:
 		conn = mysql.connect()
 		cur = conn.cursor()
-		cur.execute('SELECT * FROM items WHERE `type`="{}"'.format(typeCat))
+		cur.execute('SELECT * FROM items WHERE `type`="{}"'.format(type))
 		results = cur.fetchall()
 
-		return render_template('viewall.html', items=results, editMode=editMode, type=typeCat, config=config['siteSettings'])
+		return render_template('/inc/table.html', items=results, config=config['siteSettings'])
 
 	except Exception as e:
 		return redirect('/error/{}'.format(e))
@@ -80,27 +79,33 @@ def error(e):
 	return render_template('error.html', error=e, version=version, config=config['siteSettings'])
 
 # Edit name page
-@app.route('/editname/<int:id>/<string:name>/<int:type>')
-def editname(name, id, type):
+@app.route('/edititem/<int:bc>')
+def edititem(bc):
+
 	try:
-		return render_template('editname.html', itemName=name, itemID=id, itemType=type, config=config['siteSettings'])
+		conn = mysql.connect()
+		cur = conn.cursor()
+		cur.execute('SELECT * FROM items WHERE `barcode`={}'.format(bc))
+		results = cur.fetchall()
+
+		return render_template('edititem.html', item=results, config=config['siteSettings'])
 
 	except Exception as e:
-		return redirect('/error/{}'.format(e))	
+		return redirect('/error/{}'.format(e))
 	
 	
 # Update the product name to something else
-@app.route('/updatename',methods=['POST'])
-def updatename():
+@app.route('/updateitem',methods=['POST'])
+def updateitem():
 	try:
 		_name = request.form['item_name']
-		_id = request.form['item_id']
+		_barcode = request.form['item_bc']
 		_type = request.form['item_type']
 		
-		if _name and _id:
+		if _name and _barcode:
 			conn = mysql.connect()
 			cur = conn.cursor()
-			cur.execute('UPDATE `items` SET `name`="{}", `type`="{}" WHERE `id`= {}'.format(_name, _type, _id))
+			cur.execute('UPDATE `items` SET `name`="{}", `type`="{}" WHERE `barcode`= {}'.format(_name, _type, _barcode))
 			conn.commit()
 		
 		else:
@@ -113,20 +118,20 @@ def updatename():
 	
 # Add new item manually
 @app.route('/add')
-@app.route('/add/<id>')
-def add(id = None):
+@app.route('/add/<bc>')
+def add(bc = None):
 
-	if (id != None):
+	if (bc != None):
 		try:
-			if checkAmount(id) <= 0:
+			if checkAmount(bc) <= 0:
 				conn = mysql.connect()
 				cur = conn.cursor()
-				cur.execute('UPDATE `items` SET `amount`=1 WHERE `id`= {}'.format(id))
+				cur.execute('UPDATE `items` SET `amount`=1 WHERE `barcode`= {}'.format(bc))
 				conn.commit()	
 			else:
 				conn = mysql.connect()
 				cur = conn.cursor()
-				cur.execute('UPDATE `items` SET `amount`=`amount`+1 WHERE `id`= {}'.format(id))
+				cur.execute('UPDATE `items` SET `amount`=`amount`+1 WHERE `barcode`= {}'.format(bc))
 				conn.commit()
 
 			return redirect('/edit/true')
@@ -137,21 +142,53 @@ def add(id = None):
 	else:
 		return render_template('add.html', config=config['siteSettings'])
 
+# Generate a barcode for the DB if barcode is disabled or missing on item
+def barcodeGenerator():
+	try:
+
+		# Set amount of digits in barcode and generate one
+		digits = 7
+		range_start = 10 ** (digits - 1)
+		range_end = (10 ** digits) - 1
+		bc = randint(range_start, range_end)
+
+		conn = mysql.connect()
+		cur = conn.cursor()
+		cur.execute('SELECT * FROM items WHERE `barcode`={}'.format(bc))
+		results = cur.fetchall()
+
+		if len(results) == 0:
+			return bc
+
+		else:
+			barcodeGenerator()
+
+	except Exception as e:
+		return redirect('/error/{}'.format(e))
+
 # Add to the DB
 @app.route('/additem', methods=['POST'])
 def addItem():
 	try:
+
 		_barcode = request.form['barcode']
 		_name = request.form['item_name']
 		_amount = request.form['amount']
 		_type = request.form['type']
 
+		# Deal with the barcode
+		if _barcode == "off":
+			# If barcodes are disabled, generate a random 7 digit one to keep DB happy
+			_barcode = barcodeGenerator()
+
 		if _barcode and _name and _amount and _type:
 
 			try:
-				
-				if sendToOpenFoods(_barcode) != "Unknown Product":
-					itemName = sendToOpenFoods(_barcode)
+				if config['siteSettings']['enablebarcodes'] == "on":
+					if sendToOpenFoods(_barcode) != "Unknown Product":
+						itemName = sendToOpenFoods(_barcode)
+					else:
+						itemName = _name
 				else:
 					itemName = _name
 					
@@ -173,12 +210,12 @@ def addItem():
 
 
 # Remove items manually
-@app.route('/remove/<int:id>')
-def remove(id):
+@app.route('/remove/<int:bc>')
+def remove(bc):
 	try:
 		conn = mysql.connect()
 		cur = conn.cursor()
-		cur.execute('UPDATE `items` SET `amount`=`amount`-1 WHERE `id`= {}'.format(id))
+		cur.execute('UPDATE `items` SET `amount`=`amount`-1 WHERE `barcode`= {}'.format(bc))
 		conn.commit()
 
 		return redirect('/edit/true')
@@ -187,11 +224,11 @@ def remove(id):
 		return redirect('/error/{}'.format(e))
 
 # Check amount of items in the inventory DB
-def checkAmount(id):
+def checkAmount(bc):
 	try:
 		conn = mysql.connect()
 		cur = conn.cursor()
-		cur.execute('SELECT `amount` FROM `items` WHERE `id`= {}'.format(id))
+		cur.execute('SELECT `amount` FROM `items` WHERE `barcode`= {}'.format(bc))
 		results = cur.fetchone()
 		return results[0]
 
@@ -199,12 +236,12 @@ def checkAmount(id):
 		return redirect('/error/{}'.format(e))
 
 # Completely delete an item from the DB
-@app.route('/delete/<int:id>')
-def deleteItem(id):
+@app.route('/delete/<int:bc>')
+def deleteItem(bc):
 	try:
 		conn = mysql.connect()
 		cur = conn.cursor()
-		cur.execute('DELETE FROM `items` WHERE `id`= {}'.format(id))
+		cur.execute('DELETE FROM `items` WHERE `barcode`= {}'.format(bc))
 		conn.commit()
 		
 		return redirect('/')
@@ -237,11 +274,12 @@ def settings():
 	return render_template('settings.html', version=version, config=config['siteSettings'], saved="false")
 
 @app.route('/settings/save', methods=['POST'])
-#@basic_auth.required
+@basic_auth.required
 def saveSettings():
 	try:
 		_siteTitle = request.form['siteTitle']
 		_darkMode = request.form.get("darkMode")
+		_enableBarcodes = request.form.get("enableBarcodes")
 
 		if _siteTitle:
 
@@ -254,6 +292,11 @@ def saveSettings():
 					config.set('siteSettings', 'darkmode', 'off')
 				else:
 					config.set('siteSettings', 'darkmode', 'on')
+
+				if _enableBarcodes == None:
+					config.set('siteSettings', 'enablebarcodes', 'off')
+				else:
+					config.set('siteSettings', 'enablebarcodes', 'on')
 
 				config.write(cfg)
 				cfg.close()

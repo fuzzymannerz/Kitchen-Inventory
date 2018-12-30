@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    $('select').formSelect();
+    $('.tabs').tabs();
+
+  $("table").simplePagination({});
+
+});
+
 
 function fillFormError(){
   M.toast({html: "<strong>Please fill in all the form fields!</strong>", classes: 'red'});
@@ -41,7 +49,7 @@ $(function() {
             type: 'POST',
             success: function(response) {
                M.toast({html: "<strong>Settings saved successfully!<br>Reloading page...</strong>", classes: 'green'})
-               setTimeout(function(){window.location.reload()},4000);
+               setTimeout(function(){window.location.reload()},1500);
             },
             error: function(error) {
                 $("body").load("/error/" + error);
@@ -49,16 +57,16 @@ $(function() {
         });
     });
 	
-// Change name of item form submission	
-    $('#saveItemName').click(function() {	
+// Edit item page form submission
+    $('#updateItem').click(function() {
 
-        if ($.trim($("#new_item_name").val()) === "") {
-          alert('Please fill in the item name.');
+        if ($.trim($("#item_name").val()) === "" || $.trim($("#barcode").val()) === "" || $.trim($("#amount").val()) === "") {
+          fillFormError();
           return false;
         }
 
         $.ajax({
-            url: '/updatename',
+            url: '/updateitem',
             data: $('form').serialize(),
             type: 'POST',
             success: function(response) {
