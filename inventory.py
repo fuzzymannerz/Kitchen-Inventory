@@ -105,7 +105,7 @@ def updateitem():
 		if _name and _barcode:
 			conn = mysql.connect()
 			cur = conn.cursor()
-			cur.execute('UPDATE `items` SET `name`="{}", `type`="{}" WHERE `barcode`= {}'.format(_name, _type, _barcode))
+			cur.execute('UPDATE `items` SET `name`=%s, `type`=%s WHERE `barcode`=%s', (_name, _type, _barcode))
 			conn.commit()
 		
 		else:
