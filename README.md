@@ -45,8 +45,10 @@ _More options will be here as the project develops._
 ---
 
 ## Contributions
-If you feel you have something to add or make better or whatever feel free to contribute to the project by forking and submitting pull requests. There is also the [development branch](https://github.com/fuzzymannerz/Kitchen-Inventory/tree/development) which contains the latest ideas being worked on.  
+If you feel you have something to add or make better then feel free to contribute to the project by forking and submitting pull requests. There is also the [development branch](https://github.com/fuzzymannerz/Kitchen-Inventory/tree/development) which contains later ideas.  
 Don't use it though in production as it's most likely broken. ;)
+
+- [Peter Wilfahrt](https://github.com/p-w) - Security fix
 
 ## Credits
 This project utilises the following projects and technologies:
